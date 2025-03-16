@@ -1,0 +1,26 @@
+<view class="container">
+  <view class="status-bar">
+    <text>设备状态：{{connected ? '已连接' : '未连接'}}</text>
+  </view>
+
+  <view class="control-panel">
+    <view class="light-control">
+      <text>亮度调联</text>
+      <slider min="0" max="100" value="{{lightLevel}}" block-size="28" show-value
+        bindchange="adjustLight" />
+    </view>
+
+    <view class="mode-control">
+      <text>自动模式</text>
+      <switch checked="{{autoMode}}" bindchange="toggleAutoMode" />
+    </view>
+  </view>
+
+  <view class="preview-area">
+    <camera device-position="front" flash="off" binderror="error">
+      <cover-view class="controls">
+        <cover-image class="beauty-icon" src="../../images/beauty.png" />
+      </cover-view>
+    </camera>
+  </view>
+</view>
