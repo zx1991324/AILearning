@@ -1,0 +1,47 @@
+<!--index.wxml-->
+<view class="container" style="background-color: {{backgroundColor}}">
+  <view class="camera-wrapper">
+    <block wx:if="{{!photoPath}}">
+      <camera 
+        device-position="front"
+        flash="off"
+        mode="normal"
+        resolution="high"
+        frame-size="medium"
+        class="camera-container">
+      </camera>
+    </block>
+
+    <block wx:else>
+      <view class="preview-container">
+        <image 
+          src="{{photoPath}}" 
+          mode="aspectFill" 
+          class="preview-image">
+        </image>
+      </view>
+    </block>
+  </view>
+
+  <scroll-view class="color-scroll" scroll-x="true" enhanced="true" show-scrollbar="false">
+    <view class="color-grid">
+      <view class="color-item {{backgroundColor === '#FFD700' ? 'active' : ''}}" style="background: #FFD700" bindtap="selectColor" data-color="#FFD700"></view>
+      <view class="color-item {{backgroundColor === '#FF69B4' ? 'active' : ''}}" style="background: #FF69B4" bindtap="selectColor" data-color="#FF69B4"></view>
+      <view class="color-item {{backgroundColor === '#87CEEB' ? 'active' : ''}}" style="background: #87CEEB" bindtap="selectColor" data-color="#87CEEB"></view>
+      <view class="color-item {{backgroundColor === '#98FB98' ? 'active' : ''}}" style="background: #98FB98" bindtap="selectColor" data-color="#98FB98"></view>
+      <view class="color-item {{backgroundColor === '#DDA0DD' ? 'active' : ''}}" style="background: #DDA0DD" bindtap="selectColor" data-color="#DDA0DD"></view>
+      <view class="color-item {{backgroundColor === '#F0E68C' ? 'active' : ''}}" style="background: #F0E68C" bindtap="selectColor" data-color="#F0E68C"></view>
+      <view class="color-item {{backgroundColor === '#FF6347' ? 'active' : ''}}" style="background: #FF6347" bindtap="selectColor" data-color="#FF6347"></view>
+      <view class="color-item {{backgroundColor === '#00CED1' ? 'active' : ''}}" style="background: #00CED1" bindtap="selectColor" data-color="#00CED1"></view>
+    </view>
+  </scroll-view>
+
+  <view class="controls">
+    <button bindtap="takePhoto" wx:if="{{!photoPath}}">拍照</button>
+    <block wx:if="{{photoPath}}">
+      <button bindtap="savePhoto">保存</button>
+      <button open-type="share">分享</button>
+      <button bindtap="retake">重拍</button>
+    </block>
+  </view>
+</view>

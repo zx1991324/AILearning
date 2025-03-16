@@ -1,0 +1,22 @@
+{
+  "pages": [
+    "pages/index/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "小美补光灯",
+    "navigationBarTextStyle": "black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "permission": {
+    "scope.camera": {
+      "desc": "需要使用您的相机进行拍照"
+    },
+    "scope.writePhotosAlbum": {
+      "desc": "需要保存照片到您的相册"
+    }
+  },
+  "lazyCodeLoading": "requiredComponents"
+}
