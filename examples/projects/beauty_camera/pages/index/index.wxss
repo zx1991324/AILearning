@@ -1,0 +1,51 @@
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+
+.status-bar {
+  padding: 20rpx;
+  background: #f8f8f8;
+  border-radius: 10rpx;
+  margin-bottom: 20rpx;
+}
+
+.control-panel {
+  background: #fff;
+  border-radius: 10rpx;
+  padding: 20rpx;
+  margin-bottom: 20rpx;
+}
+
+.light-control, .mode-control {
+  margin: 20rpx 0;
+}
+
+.preview-area {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10rpx;
+}
+
+camera {
+  width: 100%;
+  height: 100%;
+}
+
+.controls {
+  position: absolute;
+  bottom: 40rpx;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.beauty-icon {
+  width: 80rpx;
+  height: 80rpx;
+}
